@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simbaba | Learning Environment</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121214;
+            color: #e1e1e6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #ff9f1c; /* Символичный оранжевый акцент */
+            margin-bottom: 10px;
+        }
+        p.subtitle {
+            font-size: 1.2rem;
+            color: #8fa0af;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+        .card {
+            background: #1a1a1e;
+            border: 2px solid #29292e;
+            border-radius: 12px;
+            padding: 40px 20px;
+            cursor: pointer;
+            transition: transform 0.2s, border-color 0.2s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #ff9f1c;
+        }
+        .card-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ff9f1c;
+            margin-bottom: 15px;
+        }
+        .card-word {
+            font-size: 2rem;
+            font-weight: bold;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hint {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #6272a4;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>BsimB</h1>
+        <p class="subtitle">Leeromgeving voor iedereen</p>
+
+        <div class="card" onclick="toggleLanguage()">
+            <div class="card-title">Click to flip</div>
+            <div class="card-word" id="vocab-word">Welkom</div>
+        </div>
+
+        <p class="hint">Tip: This is a sandbox for future Dutch language environment.</p>
+    </div>
+
+    <script>
+        // Простейший переключатель слова на чистом JavaScript
+        let isOriginal = true;
+        const wordElement = document.getElementById('vocab-word');
+
+        function toggleLanguage() {
+            if (isOriginal) {
+                wordElement.innerText = "Welcome";
+                wordElement.style.color = "#a9a9b3";
+            } else {
+                wordElement.innerText = "Welkom";
+                wordElement.style.color = "#e1e1e6";
+            }
+            isOriginal = !isOriginal;
+        }
+    </script>
+
+</body>
+</html>
